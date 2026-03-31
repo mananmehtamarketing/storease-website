@@ -55,9 +55,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center flex-shrink-0 group">
+        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Storease" height={36} className="h-[36px] w-auto brightness-0 invert" />
+          <img src="/logo.png" alt="Storease" width={36} height={36} className="w-9 h-9" />
+          <span className="text-[17px] font-extrabold tracking-[0.12em] text-white uppercase">STOREASE</span>
         </Link>
 
         {/* Desktop Nav — ALL items through MegaMenu (handles both links and submenus) */}
