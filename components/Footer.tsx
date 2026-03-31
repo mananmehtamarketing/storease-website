@@ -18,10 +18,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
+            <Link href="/" className="flex items-center mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Storease" width={32} height={32} className="w-8 h-8" />
-              <span className="text-lg font-extrabold tracking-[0.12em] uppercase">STOREASE</span>
+              <img src="/logo.png" alt="Storease" height={32} className="h-[32px] w-auto brightness-0 invert" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Where CX Strategy Meets Human Behavior. We help ambitious brands elevate every customer experience and drive measurable growth.
