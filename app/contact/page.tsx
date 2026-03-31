@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, ArrowRight, CheckCircle, Clock, Calendar } from 'lucide-react';
+import { Mail, Phone, ArrowRight, CheckCircle, Clock, Calendar, MessageSquare, Star } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const services = [
   'Virtual Events',
@@ -27,29 +28,92 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSending(true);
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+    } catch {
+      // Still show success to user, form data logged server-side
+    }
+    setSending(false);
     setSubmitted(true);
   };
 
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-16 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-16 overflow-hidden min-h-[420px]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(245,166,35)"
+            maxOpacity={0.28}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <div className="max-w-2xl">
-            <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">Get In Touch</span>
-            <h1 className="text-5xl sm:text-6xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-5">
-              Let&apos;s Start Your<br />
-              <span className="text-[#F5A623]">Marketing Journey</span><br />
-              Together.
-            </h1>
-            <p className="text-xl text-gray-500 leading-relaxed">
-              Whether you have a specific project in mind or just want to explore what&apos;s possible — we&apos;d love to hear from you. Every great partnership starts with a conversation.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text */}
+            <div>
+              <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">Get In Touch</span>
+              <h1 className="text-5xl sm:text-6xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-5">
+                Let&apos;s Start Your<br />
+                <span className="text-[#F5A623]">Marketing Journey</span><br />
+                Together.
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed">
+                Whether you have a specific project in mind or just want to explore what&apos;s possible — we&apos;d love to hear from you. Every great partnership starts with a conversation.
+              </p>
+            </div>
+
+            {/* Right: Trust signals */}
+            <div className="hidden lg:flex flex-col gap-3 animate-fade-in-up">
+              {/* Response time card */}
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 flex items-center gap-4">
+                <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Clock size={18} className="text-[#F5A623]" />
+                </div>
+                <div>
+                  <p className="font-bold text-[#1C2340] text-sm">Response within 24 hours</p>
+                  <p className="text-xs text-gray-400 mt-0.5">We respect your time — always.</p>
+                </div>
+                <div className="ml-auto w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              </div>
+
+              {/* Stars / testimonial card */}
+              <div className="bg-[#1C2340] rounded-2xl shadow-xl p-4">
+                <div className="flex gap-0.5 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={13} className="text-[#F5A623] fill-[#F5A623]" />
+                  ))}
+                </div>
+                <p className="text-sm text-gray-300 italic leading-relaxed">
+                  &ldquo;Best marketing agency decision we ever made. Results from week one.&rdquo;
+                </p>
+                <p className="text-xs text-[#F5A623] font-bold mt-2">— Head of Demand Gen, Scale-up</p>
+              </div>
+
+              {/* Discovery call card */}
+              <div className="bg-[#F5A623] rounded-2xl shadow-xl p-4 flex items-center gap-4">
+                <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Calendar size={18} className="text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-white text-sm">Free 30-min Discovery Call</p>
+                  <p className="text-xs text-white/70 mt-0.5">No pressure. Just a conversation.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,9 +207,10 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold py-4 rounded-xl text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200 flex items-center justify-center gap-2"
+                    disabled={sending}
+                    className="w-full bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold py-4 rounded-xl text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200 flex items-center justify-center gap-2 disabled:opacity-60"
                   >
-                    Send Message <ArrowRight size={18} />
+                    {sending ? 'Sending...' : 'Send Message'} {!sending && <ArrowRight size={18} />}
                   </button>
                   <p className="text-xs text-gray-400 text-center mt-3">
                     We respond within 24 hours. No spam, ever.

@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-left wing -->
+  <path d="M100 95 C90 75 65 45 35 25 C20 15 10 20 15 35 C20 50 50 75 100 95Z" fill="#F5A623"/>
+  <!-- Top-right wing -->
+  <path d="M100 95 C110 75 135 45 165 25 C180 15 190 20 185 35 C180 50 150 75 100 95Z" fill="#F5A623"/>
+  <!-- Bottom-left wing -->
+  <path d="M100 105 C90 125 65 150 35 170 C20 180 12 178 15 165 C20 150 50 125 100 105Z" fill="#E8A020"/>
+  <!-- Bottom-right wing -->
+  <path d="M100 105 C110 125 135 150 165 170 C180 180 188 178 185 165 C180 150 150 125 100 105Z" fill="#E8A020"/>
+  <!-- Center body -->
+  <ellipse cx="100" cy="100" rx="5" ry="6" fill="#D4900F"/>
+  <!-- Antennae -->
+  <path d="M98 94 C92 80 80 70 72 65" stroke="#F5A623" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M102 94 C108 80 120 70 128 65" stroke="#F5A623" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg>

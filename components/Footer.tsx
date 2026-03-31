@@ -19,11 +19,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 50 C30 35, 5 25, 10 10 C15 0, 35 5, 50 30 C65 5, 85 0, 90 10 C95 25, 70 35, 50 50Z" fill="#F5A623"/>
-                <path d="M50 50 C30 65, 5 75, 10 90 C15 100, 35 95, 50 70 C65 95, 85 100, 90 90 C95 75, 70 65, 50 50Z" fill="#E8950F" opacity="0.85"/>
-              </svg>
-              <span className="text-lg font-bold tracking-wide">STOREASE</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Storease" width={32} height={32} className="w-8 h-8" />
+              <span className="text-lg font-extrabold tracking-[0.12em] uppercase">STOREASE</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-5">
               Where CX Strategy Meets Human Behavior. We help ambitious brands elevate every customer experience and drive measurable growth.

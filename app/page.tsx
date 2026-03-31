@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Target, Brain, Zap, BarChart3, Calendar, Linkedin, Database, BookOpen, Palette, Video, Star, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle, Target, Brain, Zap, BarChart3, Calendar, Linkedin, Database, BookOpen, Palette, Video, Star, ChevronRight, TrendingUp, Users, MousePointerClick } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
+import CursorArrow from '@/components/ui/cursor-arrow';
 
 const services = [
   {
@@ -107,42 +109,141 @@ const testimonials = [
 export default function HomePage() {
   return (
     <div className="overflow-x-hidden">
+      {/* Cursor arrow — draws amber arrow from cursor → "Let's Talk" CTA */}
+      <CursorArrow />
 
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-24 overflow-hidden">
+      <section data-hero-section className="relative bg-white pt-32 pb-24 overflow-hidden min-h-[680px]">
+        {/* FlickeringGrid background */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-amber-50 to-transparent rounded-full opacity-70 translate-x-1/4 -translate-y-1/4" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-amber-50 to-transparent rounded-full opacity-40 -translate-x-1/4 translate-y-1/4" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.3}
+            color="rgb(245,166,35)"
+            maxOpacity={0.32}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 bg-[#F5A623] rounded-full"></span>
-              Where CX Strategy Meets Human Behavior
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 bg-[#F5A623] rounded-full"></span>
+                Where CX Strategy Meets Human Behavior
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                Elevate Every<br />
+                {/* Highlighted word — cursor arrow points here too */}
+                <span className="relative inline-block text-[#F5A623]">
+                  Experience.
+                  {/* Soft amber underline glow */}
+                  <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-[#F5A623] via-amber-300 to-transparent opacity-70" />
+                </span><br />
+                Drive Real Growth.
+              </h1>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-xl">
+                Today, attention isn&apos;t enough — emotion is the new metric. Storease crafts customer journeys that go beyond engagement and into true brand connection.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {/* data-cursor-target → amber arrow from cursor points here */}
+                <Link href="/contact" data-cursor-target="true" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200">
+                  Let&apos;s Talk <ArrowRight size={18} />
+                </Link>
+                <Link href="/services" className="inline-flex items-center gap-2 border-2 border-[#1C2340] text-[#1C2340] hover:bg-[#1C2340] hover:text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200">
+                  Explore Services
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-6 mt-10">
+                {['CX-Driven Strategy', 'Behavioral Science', '15+ Years Experience'].map((tag) => (
+                  <div key={tag} className="flex items-center gap-2 text-sm text-gray-500">
+                    <CheckCircle size={15} className="text-[#F5A623]" />
+                    {tag}
+                  </div>
+                ))}
+              </div>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
-              Elevate Every<br />
-              <span className="text-[#F5A623]">Experience.</span><br />
-              Drive Real Growth.
-            </h1>
-            <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-xl">
-              Today, attention isn&apos;t enough — emotion is the new metric. Storease crafts customer journeys that go beyond engagement and into true brand connection.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200">
-                Let&apos;s Talk <ArrowRight size={18} />
-              </Link>
-              <Link href="/services" className="inline-flex items-center gap-2 border-2 border-[#1C2340] text-[#1C2340] hover:bg-[#1C2340] hover:text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200">
-                Explore Services
-              </Link>
-            </div>
-            <div className="flex flex-wrap items-center gap-6 mt-10">
-              {['CX-Driven Strategy', 'Behavioral Science', '15+ Years Experience'].map((tag) => (
-                <div key={tag} className="flex items-center gap-2 text-sm text-gray-500">
-                  <CheckCircle size={15} className="text-[#F5A623]" />
-                  {tag}
+
+            {/* Right: Floating UI Cards */}
+            <div className="hidden lg:block relative h-[480px]">
+              {/* Main dashboard card */}
+              <div className="absolute top-8 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 animate-fade-in-up">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">CX Performance</span>
+                  <span className="text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">Live</span>
                 </div>
-              ))}
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="bg-amber-50 rounded-xl p-3">
+                    <p className="text-2xl font-black text-[#F5A623]">94%</p>
+                    <p className="text-xs text-gray-500 mt-0.5">Satisfaction</p>
+                  </div>
+                  <div className="bg-blue-50 rounded-xl p-3">
+                    <p className="text-2xl font-black text-blue-600">3.2x</p>
+                    <p className="text-xs text-gray-500 mt-0.5">ROI</p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Engagement Rate', val: 78, color: 'bg-[#F5A623]' },
+                    { label: 'Conversion Lift', val: 62, color: 'bg-blue-500' },
+                    { label: 'Brand Sentiment', val: 88, color: 'bg-green-500' },
+                  ].map((item) => (
+                    <div key={item.label}>
+                      <div className="flex justify-between text-xs text-gray-500 mb-1">
+                        <span>{item.label}</span><span className="font-bold">{item.val}%</span>
+                      </div>
+                      <div className="h-1.5 bg-gray-100 rounded-full">
+                        <div className={`h-full ${item.color} rounded-full`} style={{ width: `${item.val}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Floating metric card 1 */}
+              <div className="absolute top-0 left-4 bg-[#1C2340] rounded-2xl shadow-xl p-4 w-44 animate-fade-in delay-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 bg-[#F5A623]/20 rounded-lg flex items-center justify-center">
+                    <TrendingUp size={14} className="text-[#F5A623]" />
+                  </div>
+                  <span className="text-xs text-gray-400 font-medium">Pipeline</span>
+                </div>
+                <p className="text-2xl font-black text-white">+218%</p>
+                <p className="text-xs text-gray-400 mt-1">vs. last quarter</p>
+              </div>
+
+              {/* Floating metric card 2 */}
+              <div className="absolute bottom-16 left-0 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-52 animate-fade-in delay-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 bg-amber-50 rounded-full flex items-center justify-center">
+                    <Users size={14} className="text-[#F5A623]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-[#1C2340]">New Prospects</p>
+                    <p className="text-xs text-gray-400">This month</p>
+                  </div>
+                </div>
+                <div className="flex items-end gap-1">
+                  {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
+                    <div key={i} className="flex-1 bg-amber-100 rounded-sm" style={{ height: `${h * 0.4}px` }}>
+                      <div className="w-full bg-[#F5A623] rounded-sm" style={{ height: `${h * 0.4 * 0.7}px`, marginTop: `${h * 0.4 * 0.3}px` }} />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-green-600 font-bold mt-2">↑ 34 this week</p>
+              </div>
+
+              {/* Floating action card */}
+              <div className="absolute bottom-0 right-8 bg-[#F5A623] rounded-2xl shadow-xl p-4 w-48 animate-fade-in delay-400">
+                <div className="flex items-center gap-2 mb-2">
+                  <MousePointerClick size={14} className="text-white" />
+                  <span className="text-xs text-white/80 font-medium">Campaign Click-Rate</span>
+                </div>
+                <p className="text-3xl font-black text-white">12.4%</p>
+                <p className="text-xs text-white/70 mt-1">Industry avg: 2.1%</p>
+              </div>
             </div>
           </div>
         </div>

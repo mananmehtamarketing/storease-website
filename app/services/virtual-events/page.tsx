@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Calendar, CheckCircle, BarChart3, Mail, Settings, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, Calendar, CheckCircle, BarChart3, Mail, Settings, Target, TrendingUp, Users } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
   { icon: Target, title: 'Event Strategy & Planning', description: 'We work with you to define event goals, target audience, format, agenda, and success metrics before a single invite goes out.' },
@@ -19,34 +20,93 @@ export default function VirtualEventsPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-24 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-24 overflow-hidden min-h-[580px]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-50 rounded-full opacity-50 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(245,166,35)"
+            maxOpacity={0.28}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
-            ← All Services
-          </Link>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center">
-              <Calendar size={26} className="text-[#F5A623]" />
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text */}
+            <div>
+              <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
+                ← All Services
+              </Link>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center">
+                  <Calendar size={26} className="text-[#F5A623]" />
+                </div>
+                <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Virtual Events</span>
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                Virtual Events That<br />
+                <span className="text-[#F5A623]">Fill Your Pipeline.</span>
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
+                A great virtual event doesn&apos;t just attract attendees — it converts them. Storease handles every detail, so your brand shows up flawlessly and your prospects show up ready to buy.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
+                  Plan My Event <ArrowRight size={18} />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
+                  Get a Quote
+                </Link>
+              </div>
             </div>
-            <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Virtual Events</span>
-          </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6 max-w-3xl">
-            Virtual Events That<br />
-            <span className="text-[#F5A623]">Fill Your Pipeline.</span>
-          </h1>
-          <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-            A great virtual event doesn&apos;t just attract attendees — it converts them. Storease handles every detail, so your brand shows up flawlessly and your prospects show up ready to buy.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
-              Plan My Event <ArrowRight size={18} />
-            </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
-              Get a Quote
-            </Link>
+
+            {/* Right: Event dashboard mockup */}
+            <div className="hidden lg:block relative h-[420px]">
+              {/* Event card */}
+              <div className="absolute top-4 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 animate-fade-in-up">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Upcoming Event</span>
+                  <span className="text-xs bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">Live Soon</span>
+                </div>
+                <h3 className="font-black text-[#1C2340] text-lg mb-1">Q2 Customer Summit</h3>
+                <p className="text-xs text-gray-400 mb-4">Virtual · 500 seats · April 15</p>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Registrations', val: 412, max: 500, color: 'bg-[#F5A623]' },
+                    { label: 'Email open rate', val: 68, max: 100, color: 'bg-blue-500' },
+                    { label: 'Speaker confirmations', val: 100, max: 100, color: 'bg-green-500' },
+                  ].map((item) => (
+                    <div key={item.label}>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-gray-500">{item.label}</span>
+                        <span className="font-bold text-[#1C2340]">{item.val}{item.max === 100 ? '%' : ''}</span>
+                      </div>
+                      <div className="h-1.5 bg-gray-100 rounded-full">
+                        <div className={`h-full ${item.color} rounded-full`} style={{ width: `${(item.val / item.max) * 100}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Attendees card */}
+              <div className="absolute bottom-12 left-0 bg-[#1C2340] rounded-2xl shadow-xl p-4 w-48 animate-fade-in delay-200">
+                <div className="flex items-center gap-2 mb-3">
+                  <Users size={14} className="text-[#F5A623]" />
+                  <span className="text-xs text-gray-400 font-medium">Attendance</span>
+                </div>
+                <p className="text-3xl font-black text-white">3x</p>
+                <p className="text-xs text-gray-400 mt-1">vs. DIY event avg</p>
+              </div>
+
+              {/* Stat badge */}
+              <div className="absolute top-0 left-6 bg-[#F5A623] rounded-2xl shadow-xl p-4 w-36 text-center animate-fade-in delay-300">
+                <p className="text-3xl font-black text-white">68%</p>
+                <p className="text-xs text-white/80 mt-1 font-medium">Lead capture rate</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

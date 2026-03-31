@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Calendar, Linkedin, Database, BookOpen, Palette, Video, ChevronRight } from 'lucide-react';
+import { ArrowRight, Calendar, Linkedin, Database, BookOpen, Palette, Video, ChevronRight, CheckCircle } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const services = [
   {
@@ -80,22 +81,61 @@ export default function ServicesPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-20 overflow-hidden min-h-[520px]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(245,166,35)"
+            maxOpacity={0.28}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/60" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
-          <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">What We Do</span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
-            Six Ways to Elevate<br />
-            <span className="text-[#F5A623]">Your Customer Experience</span>
-          </h1>
-          <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-8">
-            Every service we offer is built around one question: how does this make your customer&apos;s experience better? That&apos;s the Storease difference.
-          </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200">
-            Get a Free Consultation <ArrowRight size={18} />
-          </Link>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
+            <div>
+              <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">What We Do</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                Six Ways to Elevate<br />
+                <span className="text-[#F5A623]">Your Customer</span><br />
+                Experience
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed max-w-xl mb-8">
+                Every service we offer is built around one question: how does this make your customer&apos;s experience better? That&apos;s the Storease difference.
+              </p>
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200">
+                Get a Free Consultation <ArrowRight size={18} />
+              </Link>
+            </div>
+
+            {/* Right: Service grid preview */}
+            <div className="hidden lg:grid grid-cols-2 gap-3 animate-fade-in-up">
+              {[
+                { icon: Calendar, label: 'Virtual Events', color: 'bg-amber-50', iconColor: 'text-[#F5A623]' },
+                { icon: Linkedin, label: 'LinkedIn Campaigns', color: 'bg-blue-50', iconColor: 'text-blue-500' },
+                { icon: Database, label: 'List Building', color: 'bg-green-50', iconColor: 'text-green-500' },
+                { icon: BookOpen, label: 'Success Stories', color: 'bg-purple-50', iconColor: 'text-purple-500' },
+                { icon: Palette, label: 'Design & Content', color: 'bg-rose-50', iconColor: 'text-rose-500' },
+                { icon: Video, label: 'Video Creation', color: 'bg-orange-50', iconColor: 'text-orange-500' },
+              ].map((s) => (
+                <div key={s.label} className={`${s.color} rounded-2xl p-4 flex items-center gap-3 shadow-sm border border-white`}>
+                  <div className="w-9 h-9 bg-white rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+                    <s.icon size={16} className={s.iconColor} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-[#1C2340]">{s.label}</p>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      <CheckCircle size={10} className="text-[#F5A623]" />
+                      <span className="text-xs text-gray-400">Full service</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

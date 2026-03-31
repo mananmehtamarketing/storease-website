@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Target, Brain, Zap, BarChart3, CheckCircle, Heart, Lightbulb, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Target, Brain, Zap, BarChart3, CheckCircle, Heart, Lightbulb, Users, TrendingUp, Star } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const differentiators = [
   {
@@ -42,23 +43,86 @@ export default function AboutPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-24 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-24 overflow-hidden min-h-[620px]">
+        {/* FlickeringGrid background */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-50 rounded-full opacity-60 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(245,166,35)"
+            maxOpacity={0.28}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <div className="max-w-3xl">
-            <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">Our Story</span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
-              We Believe Every<br />
-              <span className="text-[#F5A623]">Experience Matters.</span>
-            </h1>
-            <p className="text-xl text-gray-500 leading-relaxed mb-8 max-w-2xl">
-              Storease was built on a simple but powerful conviction: that the brands which win aren&apos;t just better at marketing — they&apos;re better at understanding their customers.
-            </p>
-            <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-              With 15+ years of experience blending behavioral science, data, and creativity, we&apos;ve developed a CX-first marketing framework that transforms how brands connect with the people who matter most to them.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text */}
+            <div>
+              <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-4">Our Story</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                We Believe Every<br />
+                <span className="text-[#F5A623]">Experience Matters.</span>
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed mb-6 max-w-2xl">
+                Storease was built on a simple but powerful conviction: that the brands which win aren&apos;t just better at marketing — they&apos;re better at understanding their customers.
+              </p>
+              <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                With 15+ years of experience blending behavioral science, data, and creativity, we&apos;ve developed a CX-first marketing framework that transforms how brands connect with the people who matter most to them.
+              </p>
+            </div>
+
+            {/* Right: Floating cards */}
+            <div className="hidden lg:block relative h-[440px]">
+              {/* Team / culture card */}
+              <div className="absolute top-6 right-0 w-64 bg-[#1C2340] rounded-2xl shadow-2xl p-5 animate-fade-in-up">
+                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-4">Our Expertise</p>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Behavioral Science', pct: 92 },
+                    { label: 'CX Strategy', pct: 96 },
+                    { label: 'Campaign Execution', pct: 88 },
+                    { label: 'Data & Analytics', pct: 85 },
+                  ].map((s) => (
+                    <div key={s.label}>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-gray-300">{s.label}</span>
+                        <span className="text-[#F5A623] font-bold">{s.pct}%</span>
+                      </div>
+                      <div className="h-1.5 bg-white/10 rounded-full">
+                        <div className="h-full bg-[#F5A623] rounded-full" style={{ width: `${s.pct}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Testimonial card */}
+              <div className="absolute bottom-8 left-0 w-60 bg-white rounded-2xl shadow-xl border border-gray-100 p-5 animate-fade-in delay-200">
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={12} className="text-[#F5A623] fill-[#F5A623]" />
+                  ))}
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed italic mb-3">
+                  &ldquo;Storease redefined how we think about customer experience. Truly transformative.&rdquo;
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center text-xs font-bold text-[#F5A623]">S</div>
+                  <div>
+                    <p className="text-xs font-bold text-[#1C2340]">Sarah M.</p>
+                    <p className="text-xs text-gray-400">VP Marketing</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Years badge */}
+              <div className="absolute top-0 left-8 bg-[#F5A623] rounded-2xl shadow-xl p-4 w-36 text-center animate-fade-in delay-300">
+                <p className="text-4xl font-black text-white">15+</p>
+                <p className="text-xs text-white/80 font-medium mt-1">Years of CX Excellence</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Video, CheckCircle, Film, Smartphone, Play, Linkedin } from 'lucide-react';
+import { ArrowRight, Video, CheckCircle, Film, Smartphone, Play, Linkedin, TrendingUp } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
   { icon: Film, title: 'Case Study Videos', description: 'Professional interview-style videos that bring your customer success stories to life — ideal for your website, sales conversations, and LinkedIn.' },
@@ -18,37 +19,90 @@ export default function VideoCreationPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-24 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-24 overflow-hidden min-h-[580px]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-50 rounded-full opacity-50 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(249,115,22)"
+            maxOpacity={0.08}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
-            ← All Services
-          </Link>
-          <div className="flex items-center gap-4 mb-5">
-            <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center">
-              <Video size={26} className="text-orange-500" />
-            </div>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text */}
             <div>
-              <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Video Creation</span>
-              <span className="ml-2 text-xs bg-green-100 text-green-700 font-bold px-2.5 py-0.5 rounded-full">New Service</span>
+              <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
+                ← All Services
+              </Link>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center">
+                  <Video size={26} className="text-orange-500" />
+                </div>
+                <div>
+                  <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Video Creation</span>
+                  <span className="ml-2 text-xs bg-green-100 text-green-700 font-bold px-2.5 py-0.5 rounded-full">New Service</span>
+                </div>
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                Stories That Move.<br />
+                <span className="text-[#F5A623]">Content That Stays.</span>
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
+                Video is the most powerful format in B2B marketing today — and most brands are leaving it on the table. Storease produces professional video content that builds trust, drives engagement, and converts prospects into customers.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
+                  Get a Video Quote <ArrowRight size={18} />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
+                  See Sample Work
+                </Link>
+              </div>
             </div>
-          </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6 max-w-3xl">
-            Stories That Move.<br />
-            <span className="text-[#F5A623]">Content That Stays.</span>
-          </h1>
-          <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-            Video is the most powerful format in B2B marketing today — and most brands are leaving it on the table. Storease produces professional video content that builds trust, drives engagement, and converts prospects into customers.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
-              Get a Video Quote <ArrowRight size={18} />
-            </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
-              See Sample Work
-            </Link>
+
+            {/* Right: Video types mockup */}
+            <div className="hidden lg:block relative h-[420px]">
+              {/* Video types card */}
+              <div className="absolute top-4 right-0 w-72 bg-[#1C2340] rounded-2xl shadow-2xl p-5 animate-fade-in-up">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Video Formats We Produce</p>
+                <div className="space-y-3">
+                  {[
+                    { icon: Film, label: 'Case Study Videos', tag: 'Most popular' },
+                    { icon: Smartphone, label: 'Social Reels', tag: 'LinkedIn ready' },
+                    { icon: Play, label: 'Explainer Videos', tag: 'High retention' },
+                    { icon: Linkedin, label: 'LinkedIn Snippets', tag: 'Thought leadership' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center gap-3 p-2.5 bg-white/5 rounded-xl">
+                      <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <item.icon size={14} className="text-orange-400" />
+                      </div>
+                      <p className="text-sm text-white font-medium flex-1">{item.label}</p>
+                      <span className="text-xs text-gray-400 bg-white/10 px-2 py-0.5 rounded-full whitespace-nowrap">{item.tag}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Engagement badge */}
+              <div className="absolute top-2 left-4 bg-[#F5A623] rounded-2xl shadow-xl p-4 w-36 text-center animate-fade-in delay-200">
+                <p className="text-3xl font-black text-white">80%</p>
+                <p className="text-xs text-white/80 mt-1 font-medium">Buyers prefer video over text</p>
+              </div>
+
+              {/* Pipeline badge */}
+              <div className="absolute bottom-8 left-2 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44 animate-fade-in delay-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp size={14} className="text-green-500" />
+                  <span className="text-xs text-gray-400 font-medium">Pipeline impact</span>
+                </div>
+                <p className="text-2xl font-black text-[#1C2340]">2x More</p>
+                <p className="text-xs text-gray-400 mt-1">from video-led outreach</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

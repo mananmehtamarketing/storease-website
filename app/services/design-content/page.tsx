@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Palette, CheckCircle, Image, Book, Newspaper, PresentationIcon } from 'lucide-react';
+import { ArrowRight, Palette, CheckCircle, Image, Book, Newspaper, PresentationIcon, TrendingUp } from 'lucide-react';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
   { icon: Image, title: 'One-Pagers & Infographics', description: 'Visual assets that communicate complex ideas simply — ideal for sales meetings, event handouts, and social sharing.' },
@@ -18,34 +19,85 @@ export default function DesignContentPage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative bg-white pt-32 pb-24 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-24 overflow-hidden min-h-[580px]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-50 rounded-full opacity-50 translate-x-1/3 -translate-y-1/3" />
+          <FlickeringGrid
+            className="absolute inset-0 w-full h-full"
+            squareSize={4}
+            gridGap={6}
+            flickerChance={0.25}
+            color="rgb(244,63,94)"
+            maxOpacity={0.07}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/65 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-          <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
-            ← All Services
-          </Link>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center">
-              <Palette size={26} className="text-rose-500" />
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: Text */}
+            <div>
+              <Link href="/services" className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#F5A623] mb-8 transition-colors">
+                ← All Services
+              </Link>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center">
+                  <Palette size={26} className="text-rose-500" />
+                </div>
+                <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Design & Content Creation</span>
+              </div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
+                Content That Earns<br />
+                <span className="text-[#F5A623]">Attention and Trust.</span>
+              </h1>
+              <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
+                In a world full of noise, the brands that win are the ones that create content worth reading, sharing, and remembering. Storease builds content that works — beautifully designed, strategically written, and purpose-built to move your audience.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
+                  Start Creating <ArrowRight size={18} />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
+                  View a Sample
+                </Link>
+              </div>
             </div>
-            <span className="text-[#F5A623] text-sm font-bold uppercase tracking-widest">Design & Content Creation</span>
-          </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6 max-w-3xl">
-            Content That Earns<br />
-            <span className="text-[#F5A623]">Attention and Trust.</span>
-          </h1>
-          <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-            In a world full of noise, the brands that win are the ones that create content worth reading, sharing, and remembering. Storease builds content that works — beautifully designed, strategically written, and purpose-built to move your audience.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
-              Start Creating <ArrowRight size={18} />
-            </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-gray-200 text-[#1C2340] hover:border-[#F5A623] hover:text-[#F5A623] font-bold px-8 py-4 rounded-full text-base transition-all">
-              View a Sample
-            </Link>
+
+            {/* Right: Content grid mockup */}
+            <div className="hidden lg:block relative h-[420px]">
+              {/* Content types grid */}
+              <div className="absolute top-4 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 animate-fade-in-up">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Content Portfolio</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { icon: Image, label: 'Infographics', color: 'bg-rose-50', iconColor: 'text-rose-500' },
+                    { icon: Book, label: 'E-Books', color: 'bg-amber-50', iconColor: 'text-[#F5A623]' },
+                    { icon: Newspaper, label: 'Blog Posts', color: 'bg-blue-50', iconColor: 'text-blue-500' },
+                    { icon: PresentationIcon, label: 'Sales Decks', color: 'bg-green-50', iconColor: 'text-green-500' },
+                  ].map((item) => (
+                    <div key={item.label} className={`${item.color} rounded-xl p-3 flex flex-col items-center gap-2`}>
+                      <item.icon size={20} className={item.iconColor} />
+                      <p className="text-xs font-bold text-[#1C2340]">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 p-3 bg-gray-50 rounded-xl flex items-center gap-3">
+                  <TrendingUp size={16} className="text-green-500 flex-shrink-0" />
+                  <p className="text-xs text-gray-600"><span className="font-bold text-green-600">3x</span> more leads from gated content assets</p>
+                </div>
+              </div>
+
+              {/* Authority badge */}
+              <div className="absolute top-2 left-4 bg-[#F5A623] rounded-2xl shadow-xl p-4 w-36 text-center animate-fade-in delay-200">
+                <p className="text-3xl font-black text-white">4x</p>
+                <p className="text-xs text-white/80 mt-1 font-medium">Brand authority growth</p>
+              </div>
+
+              {/* Engagement card */}
+              <div className="absolute bottom-8 left-2 bg-[#1C2340] rounded-2xl shadow-xl p-4 w-44 animate-fade-in delay-300">
+                <p className="text-xs text-gray-400 mb-1 font-medium">Sales cycle reduction</p>
+                <p className="text-2xl font-black text-white">60% Faster</p>
+                <p className="text-xs text-gray-400 mt-1">with strong enablement</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
