@@ -44,9 +44,9 @@ export async function POST(request: Request) {
 
     if (!res.ok) {
       const errorData = await res.json();
-      console.error('Resend error:', errorData);
+      console.error('Resend error:', JSON.stringify(errorData));
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: 'Failed to send email', details: errorData },
         { status: 500 }
       );
     }
