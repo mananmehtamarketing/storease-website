@@ -72,7 +72,7 @@ export default function ContactPage() {
                 Together.
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed">
-                Whether you have a specific project in mind or just want to explore what&apos;s possible — we&apos;d love to hear from you. Every great partnership starts with a conversation.
+                Whether you have a specific project in mind or just want to explore what&apos;s possible, we&apos;d love to hear from you. Every great partnership starts with a conversation.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-bold text-[#1C2340] text-sm">Response within 24 hours</p>
-                  <p className="text-xs text-gray-400 mt-0.5">We respect your time — always.</p>
+                  <p className="text-xs text-gray-400 mt-0.5">We respect your time, always.</p>
                 </div>
                 <div className="ml-auto w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-300 italic leading-relaxed">
                   &ldquo;Best marketing agency decision we ever made. Results from week one.&rdquo;
                 </p>
-                <p className="text-xs text-[#F5A623] font-bold mt-2">— Head of Demand Gen, Scale-up</p>
+                <p className="text-xs text-[#F5A623] font-bold mt-2">Head of Demand Gen, Scale-up</p>
               </div>
 
               {/* Discovery call card */}

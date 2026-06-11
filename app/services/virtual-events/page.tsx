@@ -5,7 +5,7 @@ import { FlickeringGrid } from '@/components/ui/flickering-grid';
 const includes = [
   { icon: Target, title: 'Event Strategy & Planning', description: 'We work with you to define event goals, target audience, format, agenda, and success metrics before a single invite goes out.' },
   { icon: Mail, title: 'Invite, Follow-Up & Registration Design', description: 'Professionally designed email sequences and registration landing pages that drive sign-ups and build anticipation.' },
-  { icon: TrendingUp, title: 'Promotion via Email, Social & Paid Ads', description: 'Multi-channel promotion campaigns to maximize attendance — email marketing, LinkedIn, and targeted paid media.' },
+  { icon: TrendingUp, title: 'Promotion via Email, Social & Paid Ads', description: 'Multi-channel promotion campaigns to maximize attendance, email marketing, LinkedIn, and targeted paid media.' },
   { icon: Settings, title: 'Technical Setup & Live Support', description: 'End-to-end platform setup, speaker briefings, rehearsals, and a dedicated technical team on the day of your event.' },
   { icon: BarChart3, title: 'Post-Event Analytics', description: 'Detailed reporting on attendance, engagement, lead scoring, and actionable insights to power your next campaign.' },
 ];
@@ -50,7 +50,7 @@ export default function VirtualEventsPage() {
                 <span className="text-[#F5A623]">Fill Your Pipeline.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-                A great virtual event doesn&apos;t just attract attendees — it converts them. Storease handles every detail, so your brand shows up flawlessly and your prospects show up ready to buy.
+                A great virtual event doesn&apos;t just attract attendees, it converts them. Storease handles every detail, so your brand shows up flawlessly and your prospects show up ready to buy.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
@@ -132,7 +132,7 @@ export default function VirtualEventsPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Full Service</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">Everything Included</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              We manage every aspect of your virtual event from concept to conversion — so you can focus on showing up and delivering value.
+              We manage every aspect of your virtual event from concept to conversion, so you can focus on showing up and delivering value.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -177,7 +177,7 @@ export default function VirtualEventsPage() {
             Ready to Plan Your<br />Next Standout Event?
           </h2>
           <p className="text-white/80 text-xl mb-8">
-            Let&apos;s build an event experience your audience will remember — and your pipeline will thank you for.
+            Let&apos;s build an event experience your audience will remember, and your pipeline will thank you for.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-[#1C2340] text-white font-bold px-10 py-5 rounded-full text-lg hover:bg-[#2D3560] transition-all">
             Let&apos;s Get Started <ArrowRight size={20} />

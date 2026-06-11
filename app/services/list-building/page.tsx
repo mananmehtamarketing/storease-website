@@ -3,10 +3,10 @@ import { ArrowRight, Database, CheckCircle, Target, BarChart3, RefreshCw, Layers
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
-  { icon: Target, title: 'Build Targeted Prospect Lists', description: 'We build your prospect list from scratch based on your ICP — targeting the exact job titles, company sizes, industries, and geographies that matter to you.' },
-  { icon: Layers, title: 'Data Augmentation', description: 'Enrich existing contacts with verified data points — job titles, seniority, company revenue, headcount, LinkedIn URLs, and more.' },
-  { icon: RefreshCw, title: 'Data Cleaning & Verification', description: 'Remove duplicates, fix formatting issues, verify email addresses and phone numbers — so your outreach lands and your CRM stays clean.' },
-  { icon: BarChart3, title: 'CRM-Ready Delivery', description: 'Delivered in your preferred format (CSV, Excel, or direct CRM import) — structured, tagged, and ready to activate immediately.' },
+  { icon: Target, title: 'Build Targeted Prospect Lists', description: 'We build your prospect list from scratch based on your ICP, targeting the exact job titles, company sizes, industries, and geographies that matter to you.' },
+  { icon: Layers, title: 'Data Augmentation', description: 'Enrich existing contacts with verified data points, job titles, seniority, company revenue, headcount, LinkedIn URLs, and more.' },
+  { icon: RefreshCw, title: 'Data Cleaning & Verification', description: 'Remove duplicates, fix formatting issues, verify email addresses and phone numbers, so your outreach lands and your CRM stays clean.' },
+  { icon: BarChart3, title: 'CRM-Ready Delivery', description: 'Delivered in your preferred format (CSV, Excel, or direct CRM import), structured, tagged, and ready to activate immediately.' },
 ];
 
 const results = [
@@ -49,7 +49,7 @@ export default function ListBuildingPage() {
                 <span className="text-[#F5A623]">Verified. Ready to Act.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-                Bad data kills campaigns before they start. Storease builds and enriches your prospect lists with verified, ICP-aligned contacts — so every email, call, and ad reaches someone who can actually say yes.
+                Bad data kills campaigns before they start. Storease builds and enriches your prospect lists with verified, ICP-aligned contacts, so every email, call, and ad reaches someone who can actually say yes.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
@@ -66,7 +66,7 @@ export default function ListBuildingPage() {
               {/* Data table card */}
               <div className="absolute top-4 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 animate-fade-in-up">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Prospect List — ICP Match</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Prospect List. ICP Match</span>
                   <span className="text-xs bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">Verified</span>
                 </div>
                 <div className="space-y-2">
@@ -131,7 +131,7 @@ export default function ListBuildingPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Full Service</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">Everything Included</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              We handle the entire data lifecycle — from sourcing to enriching to cleaning — so your team starts with contacts they can actually use.
+              We handle the entire data lifecycle, from sourcing to enriching to cleaning, so your team starts with contacts they can actually use.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">

@@ -3,11 +3,11 @@ import { ArrowRight, Linkedin, CheckCircle, MessageSquare, PenTool, Users, BarCh
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
-  { icon: MessageSquare, title: 'Consultation & Strategy', description: 'We start with your goals — brand awareness, lead generation, or pipeline acceleration — and build a campaign strategy around them.' },
-  { icon: PenTool, title: 'Ad Design & Creation', description: 'Scroll-stopping ad creative including static images, carousels, and document ads — all crafted to your brand and optimized for LinkedIn.' },
-  { icon: Users, title: 'Audience Targeting & Campaign Setup', description: 'Laser-focused audience segmentation using LinkedIn\'s targeting tools — by job title, seniority, company size, industry, and more.' },
+  { icon: MessageSquare, title: 'Consultation & Strategy', description: 'We start with your goals, brand awareness, lead generation, or pipeline acceleration, and build a campaign strategy around them.' },
+  { icon: PenTool, title: 'Ad Design & Creation', description: 'Scroll-stopping ad creative including static images, carousels, and document ads, all crafted to your brand and optimized for LinkedIn.' },
+  { icon: Users, title: 'Audience Targeting & Campaign Setup', description: 'Laser-focused audience segmentation using LinkedIn\'s targeting tools, by job title, seniority, company size, industry, and more.' },
   { icon: Target, title: 'Campaign Management', description: 'Ongoing campaign oversight including bid management, A/B testing, budget pacing, and real-time optimization.' },
-  { icon: BarChart3, title: 'Reporting & Analysis', description: 'Clear, comprehensive reporting on impressions, CTR, leads, cost-per-lead, and pipeline contribution — delivered on your schedule.' },
+  { icon: BarChart3, title: 'Reporting & Analysis', description: 'Clear, comprehensive reporting on impressions, CTR, leads, cost-per-lead, and pipeline contribution, delivered on your schedule.' },
 ];
 
 const results = [
@@ -50,7 +50,7 @@ export default function LinkedInCampaignsPage() {
                 <span className="text-[#F5A623]">Where It Matters.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-                LinkedIn is the world&apos;s most powerful B2B advertising platform — and most brands are using it wrong. Storease combines CX strategy with LinkedIn expertise to build campaigns that reach the right people with the right message.
+                LinkedIn is the world&apos;s most powerful B2B advertising platform, and most brands are using it wrong. Storease combines CX strategy with LinkedIn expertise to build campaigns that reach the right people with the right message.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
@@ -98,7 +98,7 @@ export default function LinkedInCampaignsPage() {
               {/* Targeting badge */}
               <div className="absolute top-2 left-4 bg-[#1C2340] rounded-2xl shadow-xl p-4 w-44 animate-fade-in delay-200">
                 <p className="text-xs text-gray-400 mb-2 font-medium">Audience Targeting</p>
-                {['VP & C-Suite', 'B2B SaaS', '200–5,000 employees'].map((t) => (
+                {['VP & C-Suite', 'B2B SaaS', '200-5,000 employees'].map((t) => (
                   <div key={t} className="flex items-center gap-1.5 mb-1">
                     <div className="w-1.5 h-1.5 bg-[#F5A623] rounded-full" />
                     <p className="text-xs text-gray-300">{t}</p>
@@ -137,7 +137,7 @@ export default function LinkedInCampaignsPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Full Service</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">Everything Included</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              From strategy to creative to optimization — we run your LinkedIn advertising so you can focus on closing the leads we deliver.
+              From strategy to creative to optimization, we run your LinkedIn advertising so you can focus on closing the leads we deliver.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

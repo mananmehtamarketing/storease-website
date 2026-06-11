@@ -3,7 +3,7 @@ import { ArrowRight, Palette, CheckCircle, Image, Book, Newspaper, PresentationI
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
-  { icon: Image, title: 'One-Pagers & Infographics', description: 'Visual assets that communicate complex ideas simply — ideal for sales meetings, event handouts, and social sharing.' },
+  { icon: Image, title: 'One-Pagers & Infographics', description: 'Visual assets that communicate complex ideas simply, ideal for sales meetings, event handouts, and social sharing.' },
   { icon: Book, title: 'E-Books & Whitepapers', description: 'In-depth long-form content that establishes your brand as a thought leader and generates high-intent leads through content gates.' },
   { icon: Newspaper, title: 'Blogs & PR Releases', description: 'SEO-optimized blog posts and professionally crafted press releases that build organic visibility and media coverage.' },
   { icon: PresentationIcon, title: 'Strategic Decks & Sales Enablement', description: 'Pitch decks, sales presentations, and proposal templates that give your team the tools to close faster and with more confidence.' },
@@ -49,7 +49,7 @@ export default function DesignContentPage() {
                 <span className="text-[#F5A623]">Attention and Trust.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-                In a world full of noise, the brands that win are the ones that create content worth reading, sharing, and remembering. Storease builds content that works — beautifully designed, strategically written, and purpose-built to move your audience.
+                In a world full of noise, the brands that win are the ones that create content worth reading, sharing, and remembering. Storease builds content that works, beautifully designed, strategically written, and purpose-built to move your audience.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
@@ -164,7 +164,7 @@ export default function DesignContentPage() {
             Ready to Build Content<br />That Actually Works?
           </h2>
           <p className="text-white/80 text-xl mb-8">
-            Let&apos;s create assets your audience will actually want to read — and your team will be proud to share.
+            Let&apos;s create assets your audience will actually want to read, and your team will be proud to share.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-[#1C2340] text-white font-bold px-10 py-5 rounded-full text-lg hover:bg-[#2D3560] transition-all">
             Let&apos;s Create Together <ArrowRight size={20} />

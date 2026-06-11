@@ -7,7 +7,7 @@ const services = [
   {
     icon: Calendar,
     title: 'Virtual Events',
-    description: 'End-to-end virtual event production — from strategy and registration to live execution and post-event analytics.',
+    description: 'End-to-end virtual event production, from strategy and registration to live execution and post-event analytics.',
     href: '/services/virtual-events',
     color: 'bg-amber-50',
     iconColor: 'text-[#F5A623]',
@@ -39,7 +39,7 @@ const services = [
   {
     icon: Palette,
     title: 'Design & Content Creation',
-    description: 'From infographics and e-books to whitepapers and strategic decks — content that educates and engages.',
+    description: 'From infographics and e-books to whitepapers and strategic decks, content that educates and engages.',
     href: '/services/design-content',
     color: 'bg-rose-50',
     iconColor: 'text-rose-500',
@@ -68,12 +68,12 @@ const values = [
   {
     icon: Zap,
     title: 'End-to-End Execution',
-    description: 'From consulting to creative delivery — we handle the full journey so your team can focus on what matters most.',
+    description: 'From consulting to creative delivery, we handle the full journey so your team can focus on what matters most.',
   },
   {
     icon: BarChart3,
     title: 'Transparent Results',
-    description: 'Dashboards that measure sentiment, loyalty, and growth. No vanity metrics — only insights that drive real decisions.',
+    description: 'Dashboards that measure sentiment, loyalty, and growth. No vanity metrics, only insights that drive real decisions.',
   },
 ];
 
@@ -93,7 +93,7 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Storease transformed how we approach customer engagement. Their behavioral science framework uncovered insights we simply didn't have before — and our conversion rates showed it.",
+    quote: "Storease transformed how we approach customer engagement. Their behavioral science framework uncovered insights we simply didn't have before, and our conversion rates showed it.",
     name: 'Sarah M.',
     title: 'VP Marketing, B2B SaaS Company',
     rating: 5,
@@ -109,7 +109,7 @@ const testimonials = [
 export default function HomePage() {
   return (
     <div className="overflow-x-hidden">
-      {/* Cursor arrow — draws amber arrow from cursor → "Let's Talk" CTA */}
+      {/* Cursor arrow, draws amber arrow from cursor → "Let's Talk" CTA */}
       <CursorArrow />
 
       {/* HERO */}
@@ -136,7 +136,7 @@ export default function HomePage() {
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#1C2340] leading-[1.05] tracking-tight mb-6">
                 Elevate Every<br />
-                {/* Highlighted word — cursor arrow points here too */}
+                {/* Highlighted word, cursor arrow points here too */}
                 <span className="relative inline-block text-[#F5A623]">
                   Experience.
                   {/* Soft amber underline glow */}
@@ -145,7 +145,7 @@ export default function HomePage() {
                 Drive Real Growth.
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-xl">
-                Today, attention isn&apos;t enough — emotion is the new metric. Storease crafts customer journeys that go beyond engagement and into true brand connection.
+                Today, attention isn&apos;t enough. Emotion is the new metric. Storease crafts customer journeys that go beyond engagement and into true brand connection.
               </p>
               <div className="flex flex-wrap gap-4">
                 {/* data-cursor-target → amber arrow from cursor points here */}
@@ -298,7 +298,7 @@ export default function HomePage() {
               Everything You Need to<br />Win at Customer Experience
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              From strategy to execution to measurement — six deeply integrated service areas, all built around your customer.
+              From strategy to execution to measurement, six deeply integrated service areas, all built around your customer.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -333,7 +333,7 @@ export default function HomePage() {
                 The Storease<br />Marketing Framework
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                Our four-stage framework ensures every engagement delivers consistent results — from the first insight to the final optimized campaign.
+                Our four-stage framework ensures every engagement delivers consistent results, from the first insight to the final optimized campaign.
               </p>
               <Link href="/about" className="inline-flex items-center gap-2 text-[#F5A623] font-bold hover:gap-3 transition-all">
                 Learn about our approach <ArrowRight size={16} />
@@ -406,7 +406,7 @@ export default function HomePage() {
             Let&apos;s Start Your<br />Marketing Journey Together
           </h2>
           <p className="text-gray-500 text-xl mb-10 max-w-2xl mx-auto">
-            Whether you&apos;re launching your first CX program or scaling an existing one — Storease is ready to elevate your brand.
+            Whether you&apos;re launching your first CX program or scaling an existing one. Storease is ready to elevate your brand.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-10 py-5 rounded-full text-lg transition-all duration-200 hover:shadow-2xl hover:shadow-amber-200">

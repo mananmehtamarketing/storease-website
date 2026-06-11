@@ -25,7 +25,7 @@ const NAV_ITEMS: MegaMenuItem[] = [
         items: [
           { label: 'Customer Success Stories', description: 'Case studies that close deals', icon: BookOpen, href: '/services/customer-success-stories' },
           { label: 'Design & Content Creation', description: 'Visual storytelling that converts', icon: Palette, href: '/services/design-content' },
-          { label: 'Video Creation', description: 'Stories that move — content that stays', icon: Video, href: '/services/video-creation' },
+          { label: 'Video Creation', description: 'Stories that move, content that stays', icon: Video, href: '/services/video-creation' },
         ],
       },
     ],
@@ -51,7 +51,7 @@ export default function Navbar() {
         scrolled ? 'shadow-lg shadow-black/25' : ''
       }`}
     >
-      {/* ── Single consistent inner bar — py-4 always ─────────────── */}
+      {/* ── Single consistent inner bar, py-4 always ─────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
 
         {/* Logo */}
@@ -61,7 +61,7 @@ export default function Navbar() {
           <span className="text-[17px] font-extrabold tracking-[0.12em] text-white uppercase">STOREASE</span>
         </Link>
 
-        {/* Desktop Nav — ALL items through MegaMenu (handles both links and submenus) */}
+        {/* Desktop Nav. ALL items through MegaMenu (handles both links and submenus) */}
         <div className="hidden md:flex items-center">
           <MegaMenu items={NAV_ITEMS} />
         </div>

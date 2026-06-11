@@ -16,19 +16,19 @@ const differentiators = [
   {
     icon: Zap,
     title: 'End-to-End Execution',
-    description: 'From consulting to creative delivery — we handle the full journey so your team can focus on what matters most.',
+    description: 'From consulting to creative delivery, we handle the full journey so your team can focus on what matters most.',
   },
   {
     icon: BarChart3,
     title: 'Transparent Results',
-    description: 'Dashboards that measure sentiment, loyalty, and growth. No vanity metrics — only insights that drive real decisions.',
+    description: 'Dashboards that measure sentiment, loyalty, and growth. No vanity metrics, only insights that drive real decisions.',
   },
 ];
 
 const values = [
   { icon: Heart, title: 'Empathy First', description: 'We start every project by deeply understanding the humans who will experience your brand.' },
   { icon: Lightbulb, title: 'Insight-Driven', description: "Every creative decision is backed by behavioral data and customer research, not guesswork." },
-  { icon: Users, title: 'Collaborative', description: 'We work as an extension of your team — transparent, communicative, and fully invested.' },
+  { icon: Users, title: 'Collaborative', description: 'We work as an extension of your team, transparent, communicative, and fully invested.' },
   { icon: TrendingUp, title: 'Growth-Obsessed', description: 'We measure what matters and optimize relentlessly until your goals are not just met but exceeded.' },
 ];
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 <span className="text-[#F5A623]">Experience Matters.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed mb-6 max-w-2xl">
-                Storease was built on a simple but powerful conviction: that the brands which win aren&apos;t just better at marketing — they&apos;re better at understanding their customers.
+                Storease was built on a simple but powerful conviction: that the brands which win aren&apos;t just better at marketing, they&apos;re better at understanding their customers.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
                 With 15+ years of experience blending behavioral science, data, and creativity, we&apos;ve developed a CX-first marketing framework that transforms how brands connect with the people who matter most to them.
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 Elevate Every Experience.<br />Drive Real Growth.
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                We exist to help ambitious brands build deeper, more meaningful relationships with their customers — and to prove that great CX isn&apos;t just good for people, it&apos;s good for business.
+                We exist to help ambitious brands build deeper, more meaningful relationships with their customers, and to prove that great CX isn&apos;t just good for people, it&apos;s good for business.
               </p>
               <div className="space-y-3">
                 {['Customer-first in everything we do', 'Data-informed, human-centered decisions', 'Accountable to measurable outcomes', 'Partners, not just vendors'].map((point) => (
@@ -185,7 +185,7 @@ export default function AboutPage() {
               What Makes Us Different
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              Plenty of agencies do marketing. We do something harder: we make your customers <em>feel</em> something — and then we measure it.
+              Plenty of agencies do marketing. We do something harder: we make your customers <em>feel</em> something, and then we measure it.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -209,7 +209,7 @@ export default function AboutPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Our Values</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">How We Show Up</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              These aren&apos;t just words on a wall. They&apos;re how we operate every single day — for every single client.
+              These aren&apos;t just words on a wall. They&apos;re how we operate every single day, for every single client.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -3,10 +3,10 @@ import { ArrowRight, Video, CheckCircle, Film, Smartphone, Play, Linkedin, Trend
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
-  { icon: Film, title: 'Case Study Videos', description: 'Professional interview-style videos that bring your customer success stories to life — ideal for your website, sales conversations, and LinkedIn.' },
-  { icon: Smartphone, title: 'Social Media Reels', description: 'Short-form vertical video content optimized for LinkedIn, Instagram, and other social platforms — built to stop the scroll and spark engagement.' },
+  { icon: Film, title: 'Case Study Videos', description: 'Professional interview-style videos that bring your customer success stories to life, ideal for your website, sales conversations, and LinkedIn.' },
+  { icon: Smartphone, title: 'Social Media Reels', description: 'Short-form vertical video content optimized for LinkedIn, Instagram, and other social platforms, built to stop the scroll and spark engagement.' },
   { icon: Play, title: 'Explainer Videos', description: 'Clear, compelling video content that explains your product, service, or process to prospects who prefer watching over reading.' },
-  { icon: Linkedin, title: 'LinkedIn Snippets', description: 'Short, punchy video clips tailored for LinkedIn — designed for founder personal brands, product announcements, and thought leadership.' },
+  { icon: Linkedin, title: 'LinkedIn Snippets', description: 'Short, punchy video clips tailored for LinkedIn, designed for founder personal brands, product announcements, and thought leadership.' },
 ];
 
 const results = [
@@ -52,7 +52,7 @@ export default function VideoCreationPage() {
                 <span className="text-[#F5A623]">Content That Stays.</span>
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mb-8">
-                Video is the most powerful format in B2B marketing today — and most brands are leaving it on the table. Storease produces professional video content that builds trust, drives engagement, and converts prospects into customers.
+                Video is the most powerful format in B2B marketing today, and most brands are leaving it on the table. Storease produces professional video content that builds trust, drives engagement, and converts prospects into customers.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all hover:shadow-xl hover:shadow-amber-200">
@@ -128,7 +128,7 @@ export default function VideoCreationPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Full Service</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">Everything Included</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              Professional production, strategic scripting, and delivery-ready video assets — for every format your brand needs.
+              Professional production, strategic scripting, and delivery-ready video assets, for every format your brand needs.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">

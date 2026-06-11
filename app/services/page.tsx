@@ -5,7 +5,7 @@ import { FlickeringGrid } from '@/components/ui/flickering-grid';
 const services = [
   {
     icon: Calendar,
-    title: 'Virtual Events – Full Service',
+    title: 'Virtual Events: Full Service',
     tagline: 'From zero to a standout event that drives pipeline.',
     description: 'End-to-end virtual event production including strategy, registration page design, email campaigns, technical setup, live support, and post-event analytics.',
     includes: ['Event strategy & planning', 'Invite & follow-up emails', 'Registration page design', 'Promotion via email, social & paid ads', 'Technical setup & live support', 'Post-event analytics'],
@@ -19,7 +19,7 @@ const services = [
     icon: Linkedin,
     title: 'LinkedIn Ad Campaigns',
     tagline: 'Reach decision-makers where they actually spend time.',
-    description: 'Precision-targeted LinkedIn campaigns built with ad creative that converts — backed by strategic consultation, audience targeting, campaign management and full reporting.',
+    description: 'Precision-targeted LinkedIn campaigns built with ad creative that converts, backed by strategic consultation, audience targeting, campaign management and full reporting.',
     includes: ['Consultation & strategy', 'Ad design & creation', 'Audience targeting & campaign setup', 'Campaign management', 'Reporting & analysis'],
     href: '/services/linkedin-campaigns',
     color: 'bg-blue-50',
@@ -31,7 +31,7 @@ const services = [
     icon: Database,
     title: 'List Building & Augmentation',
     tagline: 'The right contacts. Verified. CRM-ready.',
-    description: 'ICP-aligned prospect lists built from scratch or augmented with accurate data — job titles, company size, revenue, and more — cleaned and delivered ready to activate.',
+    description: 'ICP-aligned prospect lists built from scratch or augmented with accurate data, job titles, company size, revenue, and more, cleaned and delivered ready to activate.',
     includes: ['Build targeted prospect lists (ICP-based)', 'Data augmentation (job titles, company size, revenue)', 'Data cleaning & verification', 'CRM-ready delivery'],
     href: '/services/list-building',
     color: 'bg-green-50',
@@ -43,7 +43,7 @@ const services = [
     icon: BookOpen,
     title: 'Customer Success Stories',
     tagline: 'Turn your best outcomes into your best sales tool.',
-    description: 'Professionally crafted case studies built through customer interviews, story creation, and polished design — delivered as compelling 2-page PDFs ready to close deals.',
+    description: 'Professionally crafted case studies built through customer interviews, story creation, and polished design, delivered as compelling 2-page PDFs ready to close deals.',
     includes: ['Customer interviews & research', 'Story creation & content writing', 'Professional design & branding', 'Delivery as polished 2-page PDF'],
     href: '/services/customer-success-stories',
     color: 'bg-purple-50',
@@ -55,7 +55,7 @@ const services = [
     icon: Palette,
     title: 'Design & Content Creation',
     tagline: 'Content that educates, converts, and builds authority.',
-    description: 'From one-pagers and infographics to e-books, whitepapers, blog posts, PR releases, and full strategic decks — all built to your brand and content themes.',
+    description: 'From one-pagers and infographics to e-books, whitepapers, blog posts, PR releases, and full strategic decks, all built to your brand and content themes.',
     includes: ['One-pagers & infographics', 'E-books & whitepapers', 'Blogs & PR releases', 'Strategic decks & sales enablement'],
     href: '/services/design-content',
     color: 'bg-rose-50',
@@ -67,7 +67,7 @@ const services = [
     icon: Video,
     title: 'Video Creation',
     tagline: 'Stories that move. Content that stays.',
-    description: 'Professional video content for B2B brands — including case study videos, explainer content, social reels, and LinkedIn snippets that build trust and drive action.',
+    description: 'Professional video content for B2B brands, including case study videos, explainer content, social reels, and LinkedIn snippets that build trust and drive action.',
     includes: ['Case study videos', 'Social media reels', 'Explainer videos', 'LinkedIn snippets'],
     href: '/services/video-creation',
     color: 'bg-orange-50',
@@ -196,7 +196,7 @@ export default function ServicesPage() {
             Let&apos;s Find the Right Service<br />for Your Business
           </h2>
           <p className="text-gray-400 text-xl mb-10 max-w-xl mx-auto">
-            Every Storease engagement starts with a free discovery conversation. No pressure — just clarity.
+            Every Storease engagement starts with a free discovery conversation. No pressure, just clarity.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-10 py-5 rounded-full text-lg transition-all duration-200 hover:shadow-2xl hover:shadow-amber-900/30">
             Book a Free Discovery Call <ArrowRight size={20} />

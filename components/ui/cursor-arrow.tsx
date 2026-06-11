@@ -3,7 +3,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 
 /**
- * CursorArrow — draws a branded amber curved arrow from the cursor
+ * CursorArrow, draws a branded amber curved arrow from the cursor
  * to any element marked with data-cursor-target="true".
  * Drop this anywhere in a layout; it paints on a fixed full-screen canvas.
  */
@@ -41,7 +41,7 @@ export default function CursorArrow() {
 
     if (opacity <= 0.01) return;
 
-    // Curved control point — bows the arrow
+    // Curved control point, bows the arrow
     const midX = (x0 + x1) / 2;
     const midY = (y0 + y1) / 2;
     const offset = Math.min(180, dist * 0.45);

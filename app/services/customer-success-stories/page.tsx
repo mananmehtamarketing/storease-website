@@ -3,10 +3,10 @@ import { ArrowRight, BookOpen, CheckCircle, MessageSquare, PenTool, Award, FileT
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const includes = [
-  { icon: MessageSquare, title: 'Customer Interviews & Research', description: 'We conduct structured interviews with your satisfied customers to uncover the real story — the challenges, the turning point, and the tangible results.' },
+  { icon: MessageSquare, title: 'Customer Interviews & Research', description: 'We conduct structured interviews with your satisfied customers to uncover the real story, the challenges, the turning point, and the tangible results.' },
   { icon: PenTool, title: 'Story Creation & Content Writing', description: 'Expert copywriters craft your case study into a compelling narrative that speaks to your prospects\' exact pain points and buying motivations.' },
-  { icon: Award, title: 'Professional Design & Branding', description: 'Every case study is designed to reflect your brand — professionally laid out, visually polished, and ready to represent you in any sales conversation.' },
-  { icon: FileText, title: 'Delivery as Polished 2-Page PDF', description: 'Delivered as a print-ready and digital 2-page PDF — easy to share, easy to read, and built to close deals.' },
+  { icon: Award, title: 'Professional Design & Branding', description: 'Every case study is designed to reflect your brand, professionally laid out, visually polished, and ready to represent you in any sales conversation.' },
+  { icon: FileText, title: 'Delivery as Polished 2-Page PDF', description: 'Delivered as a print-ready and digital 2-page PDF, easy to share, easy to read, and built to close deals.' },
 ];
 
 const results = [
@@ -86,7 +86,7 @@ export default function CustomerSuccessStoriesPage() {
                   ))}
                 </div>
                 <p className="text-xs text-gray-500 italic">&ldquo;Working with Storease transformed how we acquire enterprise clients.&rdquo;</p>
-                <p className="text-xs font-bold text-[#1C2340] mt-2">— CMO, TechCorp</p>
+                <p className="text-xs font-bold text-[#1C2340] mt-2">CMO, TechCorp</p>
               </div>
 
               {/* Persuasion stat */}
@@ -127,7 +127,7 @@ export default function CustomerSuccessStoriesPage() {
             <span className="inline-block text-[#F5A623] text-sm font-bold uppercase tracking-widest mb-3">Full Service</span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#1C2340] mb-4">Everything Included</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              We handle the entire process — from customer outreach to final PDF delivery — so you get a polished asset without the internal lift.
+              We handle the entire process, from customer outreach to final PDF delivery, so you get a polished asset without the internal lift.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
