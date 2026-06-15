@@ -18,7 +18,7 @@ const included = [
   { icon: Search, title: 'Organic SEO', description: 'Ongoing search optimization that compounds month over month and brings buyers to you.' },
   { icon: Globe, title: 'Website Updates & Improvements', description: 'Landing pages, copy changes, speed fixes and conversion improvements, handled without tickets piling up.' },
   { icon: Megaphone, title: 'Social Media Management', description: 'Consistent, on-brand presence on the channels where your customers actually spend time.' },
-  { icon: Palette, title: 'Content & Design', description: 'Posts, decks, one-pagers, infographics and creatives, all designed to your brand.' },
+  { icon: Palette, title: 'Customized Design', description: 'Posts, decks, one-pagers, infographics and creatives, all designed to your brand.' },
   { icon: Mail, title: 'Email Campaigns', description: 'Nurture sequences and announcements that keep your pipeline warm and your customers engaged.' },
   { icon: BarChart3, title: 'Monthly Reporting', description: 'A clear dashboard and a monthly review call. You always know what we did and what it produced.' },
   { icon: Users, title: 'A Dedicated Team', description: 'Not a rotating cast of freelancers. The same experienced team, on your business, every month.' },
@@ -26,7 +26,7 @@ const included = [
 
 const inHouseCosts = [
   { role: 'Marketing Manager', cost: '$85,000+' },
-  { role: 'Content Writer', cost: '$55,000+' },
+  { role: 'Project Manager', cost: '$55,000+' },
   { role: 'Graphic Designer', cost: '$60,000+' },
   { role: 'Web Developer', cost: '$80,000+' },
   { role: 'Software & Tools', cost: '$15,000+' },
@@ -40,16 +40,8 @@ const steps = [
 
 const faqs = [
   {
-    q: 'What exactly does the $5,000 a month cover?',
-    a: 'Complete marketing management: strategy and consulting, organic SEO, website updates, social media, content and design, email campaigns, and monthly reporting. One flat fee, one team, everything coordinated.',
-  },
-  {
     q: 'Are paid ads included?',
     a: 'Ad spend and paid campaign budgets (like LinkedIn or Google ads) are billed separately, with full transparency. We will recommend paid campaigns only when they make sense for your goals, and we manage them for you when you are ready.',
-  },
-  {
-    q: 'Am I locked into a long contract?',
-    a: 'No. We work month to month. We keep clients by delivering results, not by locking them in.',
   },
   {
     q: 'Who actually works on my account?',
@@ -90,7 +82,7 @@ export default function SmbLandingPage() {
                 One Flat Fee.
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-xl">
-                Storease becomes your marketing department. Strategy, SEO, content, design, web and reporting, all managed end to end for <span className="font-bold text-[#1C2340]">$5,000 a month</span>. No hiring, no overhead, no juggling five vendors.
+                Storease becomes your marketing department. Strategy, SEO, content, design, web and reporting, all managed end to end for <span className="font-bold text-[#1C2340]">you</span>. No hiring, no overhead, no juggling five vendors.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#book-call" className="inline-flex items-center gap-2 bg-[#F5A623] hover:bg-[#D48C10] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-200 hover:shadow-xl hover:shadow-amber-200">
@@ -120,12 +112,6 @@ export default function SmbLandingPage() {
                   className="object-cover w-full h-[480px]"
                 />
               </div>
-              {/* Floating price card */}
-              <div className="absolute -bottom-6 -left-6 bg-[#1C2340] rounded-2xl shadow-xl p-5 w-56">
-                <p className="text-xs text-gray-400 font-medium mb-1">Complete marketing management</p>
-                <p className="text-3xl font-black text-white">$5,000<span className="text-base font-bold text-gray-400">/mo</span></p>
-                <p className="text-xs text-[#F5A623] font-bold mt-1">Everything included. Flat fee.</p>
-              </div>
             </div>
           </div>
         </div>
@@ -140,7 +126,7 @@ export default function SmbLandingPage() {
               What a Marketing Team<br />Really Costs
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              Hiring in-house means salaries, tools, training and turnover. Storease gives you the whole team for less than the cost of one senior hire.
+              Hiring in-house means salaries, insurance, tools, training and turnover. Storease gives you the whole team for less than the cost of one senior hire.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
@@ -178,7 +164,7 @@ export default function SmbLandingPage() {
                 <h3 className="text-xl font-bold text-[#1C2340]">Partnering with Storease</h3>
               </div>
               <div className="space-y-3 flex-1">
-                {['Senior marketing strategist', 'Content writers & designers', 'Web & SEO specialists', 'Campaign & email managers', 'All software & tools included'].map((item) => (
+                {['Senior marketing strategist', 'Project managers & designers', 'Web & SEO specialists', 'Campaign & email managers', 'All software & tools included'].map((item) => (
                   <div key={item} className="flex items-center gap-3 border-b border-gray-100 pb-3">
                     <CheckCircle size={15} className="text-[#F5A623] flex-shrink-0" />
                     <span className="text-gray-600 text-sm">{item}</span>
