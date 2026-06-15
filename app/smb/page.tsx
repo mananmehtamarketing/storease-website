@@ -8,9 +8,9 @@ import {
 import LeadForm from './LeadForm';
 
 export const metadata: Metadata = {
-  title: 'Your Marketing Team for $5,000/Month | Storease for SMBs',
+  title: 'Your Entire Marketing Team, One Flat Fee | Storease for SMBs',
   description:
-    'Storease becomes your complete marketing team. Strategy, SEO, content, design, web and reporting, all managed for a flat $5,000 a month. Built for small and medium businesses.',
+    'Storease becomes your complete marketing team. Strategy, SEO, content, design, web and reporting, all managed for one flat monthly rate. Built for small and medium businesses.',
 };
 
 const included = [
@@ -112,6 +112,11 @@ export default function SmbLandingPage() {
                   className="object-cover w-full h-[480px]"
                 />
               </div>
+              {/* Floating callout card */}
+              <div className="absolute -bottom-6 -left-6 bg-[#1C2340] rounded-2xl shadow-xl p-5 w-56">
+                <p className="text-sm text-gray-300 font-medium mb-2">Complete marketing management</p>
+                <p className="text-lg text-[#F5A623] font-bold">Everything included. Flat fee.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -173,9 +178,9 @@ export default function SmbLandingPage() {
               </div>
               <div className="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
                 <span className="text-[#1C2340] font-bold">Total per year</span>
-                <span className="text-2xl font-black text-[#F5A623]">$60,000</span>
+                <span className="text-2xl font-black text-[#F5A623]">Less than half</span>
               </div>
-              <p className="text-xs text-gray-400 mt-3">Flat $5,000 a month. Paid ad spend billed separately, with full transparency.</p>
+              <p className="text-xs text-gray-400 mt-3">Flat rate a month. Paid ad spend billed separately, with full transparency.</p>
             </div>
           </div>
           <div className="text-center mt-12">
