@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://storease.ca"),
   title: "Storease | Elevate Every Experience. Drive Real Growth.",
   description: "Storease is a CX-driven marketing agency blending behavioral science, data, and creativity to transform customer experiences and drive measurable growth.",
 };

@@ -30,8 +30,9 @@ const NAV_ITEMS: MegaMenuItem[] = [
       },
     ],
   },
-  { id: 2, label: 'About',   link: '/about' },
-  { id: 3, label: 'Contact', link: '/contact' },
+  { id: 2, label: 'Live Events', link: '/live-events' },
+  { id: 3, label: 'About',   link: '/about' },
+  { id: 4, label: 'Contact', link: '/contact' },
 ];
 
 export default function Navbar() {
@@ -169,6 +170,9 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
 
+              <Link href="/live-events" className="block py-2.5 px-3 text-white/70 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-colors" onClick={() => setMobileOpen(false)}>
+                Live Events
+              </Link>
               <Link href="/about" className="block py-2.5 px-3 text-white/70 hover:text-white text-sm font-medium rounded-lg hover:bg-white/5 transition-colors" onClick={() => setMobileOpen(false)}>
                 About
               </Link>
