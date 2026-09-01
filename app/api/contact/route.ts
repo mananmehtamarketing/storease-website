@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: 'Storease Website <onboarding@resend.dev>',
-        to: ['manan.mehta@marketincrew.com'],
+        to: ['info@storease.ca'],
         subject: `New Contact Form: ${name} - ${service}`,
         reply_to: email,
         html: `

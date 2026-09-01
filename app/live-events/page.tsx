@@ -145,7 +145,7 @@ const faqs = [
   },
   {
     q: 'Which cities or regions do you cover?',
-    a: 'We source venues and manage logistics wherever your audience is, from a single city to a 12-city tour. Tell us the markets you need to reach and we will confirm coverage on the strategy call.',
+    a: 'We source venues and manage logistics wherever your audience is, from a single city to a 10-city tour. Tell us the markets you need to reach and we will confirm coverage on the strategy call.',
   },
   {
     q: 'Can we start with one event before committing to a retainer?',
@@ -211,7 +211,7 @@ export default function LiveEventsPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8">
-              From a single flagship conference to a 12-city roadshow, our team handles strategy,
+              From a single flagship conference to a 10-city roadshow, our team handles strategy,
               logistics, and delivery so your team can focus on the room, not the run sheet.
             </p>
             <Link
