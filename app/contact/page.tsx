@@ -4,14 +4,22 @@ import { useState } from 'react';
 import { Mail, Phone, ArrowRight, CheckCircle, Clock, Calendar, MessageSquare, Star } from 'lucide-react';
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
-const services = [
-  'Virtual Events',
-  'LinkedIn Ad Campaigns',
-  'List Building & Augmentation',
-  'Customer Success Stories',
-  'Design & Content Creation',
-  'Video Creation',
-  "I'm not sure yet",
+const serviceGroups = [
+  {
+    label: 'Live Events',
+    options: ['Conference', 'Lunch and Learn', 'Road show'],
+  },
+  {
+    label: 'Marketing Services',
+    options: [
+      'Virtual Events',
+      'LinkedIn Ad Campaigns',
+      'List Building & Augmentation',
+      'Customer Success Stories',
+      'Design & Content Creation',
+      'Video Creation',
+    ],
+  },
 ];
 
 export default function ContactPage() {
@@ -189,9 +197,14 @@ export default function ContactPage() {
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#F5A623] focus:ring-2 focus:ring-amber-100 transition-all text-gray-600 bg-white"
                     >
                       <option value="">Select a service...</option>
-                      {services.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                      {serviceGroups.map((group) => (
+                        <optgroup key={group.label} label={group.label}>
+                          {group.options.map((s) => (
+                            <option key={s} value={s}>{s}</option>
+                          ))}
+                        </optgroup>
                       ))}
+                      <option value="I'm not sure yet">I&apos;m not sure yet</option>
                     </select>
                   </div>
                   <div className="mb-6">
