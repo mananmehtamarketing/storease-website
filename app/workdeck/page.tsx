@@ -89,14 +89,49 @@ const PROCESS = [
 /*  SMALL PIECES                                                       */
 /* ------------------------------------------------------------------ */
 
-function Eyebrow({ n, children, dark }: { n: string; children: React.ReactNode; dark?: boolean }) {
+function Num({ n }: { n: string }) {
   return (
-    <div className="flex items-center gap-3 mb-5">
-      <span className="text-[#F5A623] text-sm font-black tabular-nums">{n}</span>
-      <span className="h-px w-8 bg-[#F5A623]" />
-      <span className={`text-xs font-bold uppercase tracking-[0.2em] ${dark ? 'text-white/60' : 'text-gray-400'}`}>
-        {children}
-      </span>
+    <div className="mb-5 flex items-center gap-3">
+      <span className="text-sm font-black tabular-nums text-[#F5A623]">{n}</span>
+      <span className="h-px w-10 bg-[#F5A623]" />
+    </div>
+  );
+}
+
+/** Title is the loud thing. Tagline and body step down from it. */
+function SpreadHead({
+  n,
+  title,
+  tagline,
+  copy,
+  dark,
+  compact,
+}: {
+  n: string;
+  title: string;
+  tagline: string;
+  copy: string;
+  dark?: boolean;
+  compact?: boolean;
+}) {
+  return (
+    <div className={compact ? '' : 'mb-14 max-w-3xl'}>
+      <Num n={n} />
+      <h2
+        className={`font-black leading-[1.02] tracking-tight ${
+          compact ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl lg:text-7xl'
+        }`}
+      >
+        {title}
+      </h2>
+      <p className="mt-4 text-lg font-bold leading-snug text-[#F5A623] sm:text-xl">{tagline}</p>
+      <p
+        className={`mt-4 max-w-2xl text-sm leading-relaxed sm:text-base ${
+          dark ? 'text-white/55' : 'text-gray-500'
+        }`}
+      >
+        {copy}
+      </p>
     </div>
   );
 }
@@ -133,7 +168,7 @@ function Tile({
     <button
       type="button"
       onClick={() => onOpen(src)}
-      className={`group mb-4 block w-full max-w-full break-inside-avoid overflow-hidden rounded-2xl sm:mb-6 sm:rounded-3xl text-left transition-all duration-300 hover:-translate-y-1 ${
+      className={`group mb-4 block w-full max-w-full break-inside-avoid overflow-hidden rounded-2xl text-left transition-all duration-300 hover:-translate-y-1 sm:mb-6 sm:rounded-3xl ${
         dark ? 'bg-white/5 ring-1 ring-white/10 hover:ring-[#F5A623]/60' : 'bg-gray-50 ring-1 ring-gray-100 hover:ring-[#F5A623]/60 hover:shadow-xl'
       }`}
     >
@@ -171,7 +206,7 @@ function FilmCard({ film }: { film: Film }) {
   const [playing, setPlaying] = useState(false);
   return (
     <div className="group">
-      <div className="relative aspect-video w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black ring-1 ring-white/10">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-black ring-1 ring-white/10 sm:rounded-3xl">
         {playing ? (
           <iframe
             className="absolute inset-0 h-full w-full"
@@ -210,7 +245,7 @@ function FilmCard({ film }: { film: Film }) {
           </span>
           <span className="text-sm font-bold text-white/50">{film.brand}</span>
         </div>
-        <p className="mt-3 text-base leading-relaxed text-white/70">{film.note}</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">{film.note}</p>
       </div>
     </div>
   );
@@ -314,15 +349,17 @@ export default function WorkDeckPage() {
             <div className="mb-7 flex items-center gap-3">
               <span className="h-px w-10 bg-[#F5A623]" />
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5A623]">
-                Storease · Work Deck · 2026
+                Storease · 2026
               </span>
             </div>
-            <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-tight text-white sm:text-7xl lg:text-8xl">
-              This is the work.
+            <h1 className="max-w-4xl text-6xl font-black leading-[1.0] tracking-tight text-white sm:text-8xl lg:text-9xl">
+              Work Deck
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
-              Video, brand, campaigns and events for B2B technology companies. No case study PDFs, no
-              stock decks. Scroll through and see the standard we build to.
+            <p className="mt-6 max-w-2xl text-xl font-bold leading-snug text-[#F5A623] sm:text-2xl">
+              Video, brand, campaigns and events for B2B technology companies.
+            </p>
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/60 sm:text-base">
+              No case study PDFs. No stock decks. Just the work.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
@@ -346,15 +383,13 @@ export default function WorkDeckPage() {
       <Spread id="contents">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow n="00">What is inside</Eyebrow>
-            <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl">
-              Seven things we make,<br />
-              <span className="text-[#F5A623]">and how good they get.</span>
-            </h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-gray-500">
-              Every section below is one capability. Click anything to see it full size. The films play
-              in the page.
-            </p>
+            <SpreadHead
+              compact
+              n="00"
+              title="Contents"
+              tagline="Seven things we make."
+              copy="Every section below is one capability. Click anything to see it full size. The films play in the page."
+            />
           </div>
 
           <ul className="divide-y divide-gray-100 border-t border-gray-100">
@@ -366,7 +401,7 @@ export default function WorkDeckPage() {
                     <h3 className="text-xl font-black tracking-tight transition-colors group-hover:text-[#F5A623] sm:text-2xl">
                       {c.title}
                     </h3>
-                    <p className="mt-1.5 text-base leading-relaxed text-gray-500">{c.line}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-gray-500 sm:text-base">{c.line}</p>
                   </div>
                 </div>
               </li>
@@ -377,20 +412,13 @@ export default function WorkDeckPage() {
 
       {/* ---------------- VIDEO ---------------- */}
       <Spread id="video" dark>
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="01" dark>
-            Video Creation
-          </Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            Video is the format<br />
-            <span className="text-[#F5A623]">that moves B2B.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/65">
-            Brand films, launch films, product films, demos and the social cutdowns that come out of
-            them. Four films below, one of each kind, so you can hear the difference between a video
-            that explains and a video that sells.
-          </p>
-        </div>
+        <SpreadHead
+          dark
+          n="01"
+          title="Video Creation"
+          tagline="The format that moves B2B."
+          copy="Brand films, launch films, product films, demos and the social cutdowns that come out of them. Four films below, one of each kind, so you can hear the difference between a video that explains and a video that sells."
+        />
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           {FILMS.map((f) => (
@@ -398,25 +426,16 @@ export default function WorkDeckPage() {
           ))}
         </div>
 
-        <p className="mt-12 max-w-3xl text-sm leading-relaxed text-white/40">
-          Films shown are the reference standard for this format and are credited to their brands.
-          Ask us for the Storease showreel and current client work.
-        </p>
       </Spread>
 
       {/* ---------------- EVENTS ---------------- */}
       <Spread id="events">
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="02">Live and Virtual Events</Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            Rooms people remember,<br />
-            <span className="text-[#F5A623]">filmed properly.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gray-500">
-            Conferences, roadshows and lunch and learns. We plan them, run them, film them, and cut
-            the footage into something you can use for the next twelve months.
-          </p>
-        </div>
+        <SpreadHead
+          n="02"
+          title="Live and Virtual Events"
+          tagline="Rooms people remember, filmed properly."
+          copy="Conferences, roadshows and lunch and learns. We plan them, run them, film them, and cut the footage into something you can use for the next twelve months."
+        />
 
         <div className="overflow-hidden rounded-3xl bg-[#1C2340] ring-1 ring-gray-100">
           <video
@@ -436,7 +455,7 @@ export default function WorkDeckPage() {
 
         <div className="mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
           {EVENT_IMGS.map((e) => (
-            <div key={e.src} className="group overflow-hidden rounded-2xl sm:rounded-3xl ring-1 ring-gray-100">
+            <div key={e.src} className="group overflow-hidden rounded-2xl ring-1 ring-gray-100 sm:rounded-3xl">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={e.src}
@@ -458,87 +477,59 @@ export default function WorkDeckPage() {
 
       {/* ---------------- CAMPAIGNS ---------------- */}
       <Spread id="campaigns" dark>
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="03" dark>
-            Campaign Systems
-          </Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            One idea, built out<br />
-            <span className="text-[#F5A623]">across every placement.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/65">
-            A campaign is not a post. It is a system: the hero visual, the proof stat, the objection
-            handler, the offer, and the twenty pieces that carry it for a quarter.
-          </p>
-        </div>
+        <SpreadHead
+          dark
+          n="03"
+          title="Campaign Systems"
+          tagline="One idea, across every placement."
+          copy="A campaign is not a post. It is a system: the hero visual, the proof stat, the objection handler, the offer, and the twenty pieces that carry it for a quarter."
+        />
         <Masonry items={CAMPAIGN_IMGS} onOpen={open} dark />
       </Spread>
 
       {/* ---------------- SOCIAL ---------------- */}
       <Spread id="social">
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="04">Social and Content</Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            Built for the feed<br />
-            <span className="text-[#F5A623]">your buyers actually read.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gray-500">
-            LinkedIn first. Carousels, statics and post systems designed so the tenth post still looks
-            like it came from the same company as the first.
-          </p>
-        </div>
+        <SpreadHead
+          n="04"
+          title="Social and Content"
+          tagline="Built for the feed your buyers actually read."
+          copy="LinkedIn first. Carousels, statics and post systems designed so the tenth post still looks like it came from the same company as the first."
+        />
         <Masonry items={SOCIAL_IMGS} onOpen={open} />
       </Spread>
 
       {/* ---------------- BRAND ---------------- */}
       <Spread id="brand" dark>
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="05" dark>
-            Brand Identity
-          </Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            A mark is the easy part.<br />
-            <span className="text-[#F5A623]">The system is the work.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/65">
-            Logos, palettes, type scales and the rules that stop a brand falling apart the moment
-            somebody outside the design team opens a file.
-          </p>
-        </div>
+        <SpreadHead
+          dark
+          n="05"
+          title="Brand Identity"
+          tagline="The mark is the easy part. The system is the work."
+          copy="Logos, palettes, type scales and the rules that stop a brand falling apart the moment somebody outside the design team opens a file."
+        />
         <Masonry items={BRAND_IMGS} onOpen={open} dark />
       </Spread>
 
       {/* ---------------- ENVIRONMENTS ---------------- */}
       <Spread id="environments">
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="06">Brand Environments</Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            Where the brand<br />
-            <span className="text-[#F5A623]">meets a real person.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gray-500">
-            Stand graphics, billboards, screens and stage design. The moment a software brand has to
-            exist at full size, in a room, next to twelve competitors doing the same thing.
-          </p>
-        </div>
+        <SpreadHead
+          n="06"
+          title="Brand Environments"
+          tagline="Stands, billboards, screens and stages."
+          copy="The moment a software brand has to exist at full size, in a room, next to twelve competitors doing the same thing."
+        />
         <Masonry items={ENV_IMGS} onOpen={open} cols="sm:columns-2" />
       </Spread>
 
       {/* ---------------- WEB ---------------- */}
       <Spread id="web" dark>
-        <div className="mb-14 max-w-3xl">
-          <Eyebrow n="07" dark>
-            Web and Landing Pages
-          </Eyebrow>
-          <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl">
-            Pages built to convert,<br />
-            <span className="text-[#F5A623]">not just to look finished.</span>
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/65">
-            Landing pages, campaign pages and full sites. Fast, responsive, tracked, and written so
-            the first screen already answers the question the visitor came with.
-          </p>
-        </div>
+        <SpreadHead
+          dark
+          n="07"
+          title="Web and Landing Pages"
+          tagline="Built to convert, not just to look finished."
+          copy="Landing pages, campaign pages and full sites. Fast, responsive, tracked, and written so the first screen already answers the question the visitor came with."
+        />
         <Masonry items={WEB_IMGS} onOpen={open} dark cols="sm:columns-2" />
       </Spread>
 
@@ -546,22 +537,20 @@ export default function WorkDeckPage() {
       <Spread id="process">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow n="08">How we work</Eyebrow>
-            <h2 className="text-4xl font-black leading-[1.06] tracking-tight sm:text-5xl">
-              Four steps.<br />
-              <span className="text-[#F5A623]">No surprises.</span>
-            </h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-gray-500">
-              Most of what goes wrong in agency work goes wrong in the first two weeks. This is how we
-              stop that.
-            </p>
+            <SpreadHead
+              compact
+              n="08"
+              title="How We Work"
+              tagline="Four steps. No surprises."
+              copy="Most of what goes wrong in agency work goes wrong in the first two weeks. This is how we stop that."
+            />
           </div>
           <ol className="space-y-8">
             {PROCESS.map((p) => (
               <li key={p.n} className="rounded-3xl bg-gray-50 p-7 ring-1 ring-gray-100 sm:p-9">
                 <span className="text-sm font-black tabular-nums text-[#F5A623]">{p.n}</span>
                 <h3 className="mt-2 text-2xl font-black tracking-tight">{p.t}</h3>
-                <p className="mt-3 text-base leading-relaxed text-gray-500">{p.d}</p>
+                <p className="mt-3 text-sm leading-relaxed text-gray-500 sm:text-base">{p.d}</p>
               </li>
             ))}
           </ol>
@@ -572,7 +561,7 @@ export default function WorkDeckPage() {
             Want this level of work<br />
             <span className="text-[#F5A623]">pointed at your product?</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
             Tell us what you are launching and who has to believe it. We will come back with an idea,
             not a rate card.
           </p>
