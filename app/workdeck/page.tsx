@@ -26,13 +26,13 @@ const FILMS: Film[] = [
   {
     id: 'UcZfSIegPNw',
     brand: 'Airtable',
-    format: 'Launch film',
+    format: 'Demo Video',
     note: 'A whole platform generation introduced through real work, not slides. This is how a big release should land.',
   },
   {
     id: '92QjC95cbvM',
     brand: 'Pendo',
-    format: 'Platform film',
+    format: 'Solution Video',
     note: 'Three separate products shown as one system. The hardest brief in B2B video, done cleanly.',
   },
   {
@@ -50,27 +50,24 @@ const SPREADS = [
   { id: 'events', label: 'Events' },
   { id: 'campaigns', label: 'Campaigns' },
   { id: 'social', label: 'Social' },
-  { id: 'brand', label: 'Brand' },
   { id: 'environments', label: 'Environments' },
   { id: 'web', label: 'Web' },
   { id: 'process', label: 'Process' },
 ];
 
 const CONTENTS = [
-  { n: '01', title: 'Video Creation', line: 'Brand films, launch films, product films, demos and social cutdowns.' },
+  { n: '01', title: 'Video Creation', line: 'Brand films, product films, demo videos, solution videos and social cutdowns.' },
   { n: '02', title: 'Live and Virtual Events', line: 'Conferences, roadshows, lunch and learns, filmed and cut properly.' },
   { n: '03', title: 'Campaign Systems', line: 'One idea, built out across every placement your buyers actually see.' },
   { n: '04', title: 'Social and Content', line: 'Carousels, statics and post systems for LinkedIn-first B2B.' },
-  { n: '05', title: 'Brand Identity', line: 'Marks, palettes, type systems and the rules that keep them intact.' },
-  { n: '06', title: 'Brand Environments', line: 'Stands, billboards, screens and the places a brand meets people.' },
-  { n: '07', title: 'Web and Landing Pages', line: 'Pages built to convert, not just to look finished.' },
+  { n: '05', title: 'Brand Environments', line: 'Stands, billboards, screens and the places a brand meets people.' },
+  { n: '06', title: 'Web and Landing Pages', line: 'Pages built to convert, not just to look finished.' },
 ];
 
-const CAMPAIGN_IMGS = ['p01.jpg', 'p09.jpg', 'p07.jpg', 'p08.jpg', 'p03.jpg', 'p05.jpg'];
-const SOCIAL_IMGS = ['p18.jpg', 'p13.jpg', 'p19.jpg'];
-const BRAND_IMGS = ['p11.jpg', 'p16.jpg', 'p10.jpg', 'p12.jpg', 'p14.jpg'];
+const CAMPAIGN_IMGS = ['p01.jpg', 'p07.jpg', 'p08.jpg'];
+const SOCIAL_IMGS = ['p18.jpg', 'p13.jpg'];
 const ENV_IMGS = ['v05.jpg', 'v04.jpg', 'v08.jpg', 'v03.jpg', 'v06.jpg', 'v10.jpg', 'v07.jpg', 'v09.jpg'];
-const WEB_IMGS = ['p02.jpg', 'p04.jpg', 'p15.jpg', 'p17.jpg'];
+const WEB_IMGS = ['p02.jpg', 'p04.jpg', 'p17.jpg'];
 
 const EVENT_IMGS = [
   { src: '/img/live-events/conference.jpg', label: 'Conferences' },
@@ -387,7 +384,7 @@ export default function WorkDeckPage() {
               compact
               n="00"
               title="Contents"
-              tagline="Seven things we make."
+              tagline="Six things we make."
               copy="Every section below is one capability. Click anything to see it full size. The films play in the page."
             />
           </div>
@@ -417,7 +414,7 @@ export default function WorkDeckPage() {
           n="01"
           title="Video Creation"
           tagline="The format that moves B2B."
-          copy="Brand films, launch films, product films, demos and the social cutdowns that come out of them. Four films below, one of each kind, so you can hear the difference between a video that explains and a video that sells."
+          copy="Product films, demo videos, solution videos, brand films and the social cutdowns that come out of them. Four films below, one of each kind, so you can hear the difference between a video that explains and a video that sells."
         />
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
@@ -437,23 +434,7 @@ export default function WorkDeckPage() {
           copy="Conferences, roadshows and lunch and learns. We plan them, run them, film them, and cut the footage into something you can use for the next twelve months."
         />
 
-        <div className="overflow-hidden rounded-3xl bg-[#1C2340] ring-1 ring-gray-100">
-          <video
-            className="aspect-video w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/workdeck/img/event-poster.jpg"
-          >
-            <source src="/workdeck/video/event-film.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <p className="mt-5 text-sm font-bold uppercase tracking-widest text-gray-400">
-          Event film · the cut that lives on the homepage
-        </p>
-
-        <div className="mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
           {EVENT_IMGS.map((e) => (
             <div key={e.src} className="group overflow-hidden rounded-2xl ring-1 ring-gray-100 sm:rounded-3xl">
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -468,10 +449,6 @@ export default function WorkDeckPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-6">
-          <Masonry items={['v08.jpg']} onOpen={open} cols="sm:columns-1" />
         </div>
       </Spread>
 
@@ -495,42 +472,30 @@ export default function WorkDeckPage() {
           tagline="Built for the feed your buyers actually read."
           copy="LinkedIn first. Carousels, statics and post systems designed so the tenth post still looks like it came from the same company as the first."
         />
-        <Masonry items={SOCIAL_IMGS} onOpen={open} />
-      </Spread>
-
-      {/* ---------------- BRAND ---------------- */}
-      <Spread id="brand" dark>
-        <SpreadHead
-          dark
-          n="05"
-          title="Brand Identity"
-          tagline="The mark is the easy part. The system is the work."
-          copy="Logos, palettes, type scales and the rules that stop a brand falling apart the moment somebody outside the design team opens a file."
-        />
-        <Masonry items={BRAND_IMGS} onOpen={open} dark />
+        <Masonry items={SOCIAL_IMGS} onOpen={open} cols="sm:columns-2" />
       </Spread>
 
       {/* ---------------- ENVIRONMENTS ---------------- */}
-      <Spread id="environments">
+      <Spread id="environments" dark>
         <SpreadHead
-          n="06"
+          dark
+          n="05"
           title="Brand Environments"
           tagline="Stands, billboards, screens and stages."
           copy="The moment a software brand has to exist at full size, in a room, next to twelve competitors doing the same thing."
         />
-        <Masonry items={ENV_IMGS} onOpen={open} cols="sm:columns-2" />
+        <Masonry items={ENV_IMGS} onOpen={open} dark cols="sm:columns-2" />
       </Spread>
 
       {/* ---------------- WEB ---------------- */}
-      <Spread id="web" dark>
+      <Spread id="web">
         <SpreadHead
-          dark
-          n="07"
+          n="06"
           title="Web and Landing Pages"
           tagline="Built to convert, not just to look finished."
           copy="Landing pages, campaign pages and full sites. Fast, responsive, tracked, and written so the first screen already answers the question the visitor came with."
         />
-        <Masonry items={WEB_IMGS} onOpen={open} dark cols="sm:columns-2" />
+        <Masonry items={WEB_IMGS} onOpen={open} cols="sm:columns-2" />
       </Spread>
 
       {/* ---------------- PROCESS + CTA ---------------- */}
@@ -539,7 +504,7 @@ export default function WorkDeckPage() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <SpreadHead
               compact
-              n="08"
+              n="07"
               title="How We Work"
               tagline="Four steps. No surprises."
               copy="Most of what goes wrong in agency work goes wrong in the first two weeks. This is how we stop that."
